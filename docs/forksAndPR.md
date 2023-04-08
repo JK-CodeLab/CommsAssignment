@@ -19,14 +19,14 @@ You can find more information about forking a repository on the [GitHub document
     You can do this by clicking on the **“File”** menu in the top left and selecting **“Open Folder”**.
     <br />
     <br />
-    <img src="/images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
     <br />
     <br />
 
 3.  Navigate to the directory you just created, select it and click the **“Select Folder”** button.
     <br />
     <br />
-    <img src="/images/forksAndPR/openFolder.png" alt= "Opening folder" width="650px">
+    <img src="../images/forksAndPR/openFolder.png" alt= "Opening folder" width="650px">
     <br />
     <br />
 
@@ -35,12 +35,12 @@ You can find more information about forking a repository on the [GitHub document
     The working directory should be the directory where you want to fork the repository. We will come back to this terminal window later.
     <br />
     <br />
-    <img src="/images/forksAndPR/openTerminal.png" alt= "Opening terminal" width="650px">
+    <img src="../images/forksAndPR/openTerminal.png" alt= "Opening terminal" width="650px">
     <br />
 
     !!! Tip "Tip"
 
-          Revisit [Adding Files to Repository](/gettingStarted/#adding-files-to-the-repository) for more information on how to change your working directory.
+          Revisit [Adding Files to Repository](../gettingStarted/#adding-files-to-the-repository) for more information on how to change your working directory.
 
     <br />
 
@@ -53,7 +53,7 @@ You can find more information about forking a repository on the [GitHub document
     This will create a copy of the repository in your own GitHub account.
     <br />
     <br />
-    <img src="/images/forksAndPR/forkRepository.png" alt= "Image showing how to fork repository" width="650px">
+    <img src="../images/forksAndPR/forkRepository.png" alt= "Image showing how to fork repository" width="650px">
     <br />
 
     !!! Info "Forked Repositories"
@@ -71,7 +71,7 @@ You can find more information about forking a repository on the [GitHub document
 8.  Click on the **"Create fork"** button to finish forking the repository.
     <br />
     <br />
-    <img src="/images/forksAndPR/createFork.png" alt= "Image showing how to fork repository" width="650px">
+    <img src="../images/forksAndPR/createFork.png" alt= "Image showing how to fork repository" width="650px">
     <br />
     <br />
 
@@ -82,7 +82,7 @@ You can find more information about forking a repository on the [GitHub document
 10. **Copy the URL** from the **"Code"** dropdown button on GitHub.
     <br />
     <br />
-    <img src="/images/forksAndPR/cloneFork.png" alt= "Image showing how to clone repository" width="650px">
+    <img src="../images/forksAndPR/cloneFork.png" alt= "Image showing how to clone repository" width="650px">
     <br />
     <br />
 
@@ -91,7 +91,7 @@ You can find more information about forking a repository on the [GitHub document
     Replace the `[repository URL]` with the **URL you copied** in the previous step.
     <br />
     <br />
-    <img src="/images/forksAndPR/cloneLocal.png" alt= "Image showing how to clone repository" width="650px">
+    <img src="../images/forksAndPR/cloneLocal.png" alt= "Image showing how to clone repository" width="650px">
     <br />
     <br />
 
@@ -108,7 +108,7 @@ You can find more information about forking a repository on the [GitHub document
     For example, if you are adding a new feature, you could name the branch "add-feature".
     <br />
     <br />
-    <img src="/images/forksAndPR/createBranch.png" alt= "Image showing how create a branch" width="650px">
+    <img src="../images/forksAndPR/createBranch.png" alt= "Image showing how create a branch" width="650px">
     <br />
     <br />
 
@@ -129,14 +129,14 @@ You can find more information about forking a repository on the [GitHub document
     Replace the `[branch name]` with the **name of the branch that you created** in the previous section.
     <br />
     <br />
-    <img src="/images/forksAndPR/pushCode.png" alt= "Image showing how push code" width="650px">
+    <img src="../images/forksAndPR/pushCode.png" alt= "Image showing how push code" width="650px">
     <br />
     <br />
 
 3.  Once your changes are pushed to your forked repository, go to the **original repository on GitHub** and click on the **"Compare & pull request"** button.
     <br />
     <br />
-    <img src="/images/forksAndPR/createPR.png" alt= "Image showing create a pull request" width="650px">
+    <img src="../images/forksAndPR/createPR.png" alt= "Image showing create a pull request" width="650px">
     <br />
 
     !!! Tip
@@ -154,7 +154,7 @@ You can find more information about forking a repository on the [GitHub document
     This should be the branch that you created in the previous section.
     <br />
     <br />
-    <img src="/images/forksAndPR/checkBranch.png" alt= "Image showing how to confirm if pull request is right" width="650px">
+    <img src="../images/forksAndPR/checkBranch.png" alt= "Image showing how to confirm if pull request is right" width="650px">
     <br />
 
     !!! Info "Pull Request GUI"
@@ -168,7 +168,7 @@ You can find more information about forking a repository on the [GitHub document
     Click on the **"Create pull request"** button.
     <br />
     <br />
-    <img src="/images/forksAndPR/finalCreatePR.png" alt= "Image showing how finalize pull request" width="650px">
+    <img src="../images/forksAndPR/finalCreatePR.png" alt= "Image showing how finalize pull request" width="650px">
     <br />
     <br />
 
@@ -186,4 +186,4 @@ By the end of this section you will have successfully learned about and complete
 - [x] Pushed your changes to your forked repository
 - [x] Created a pull request for your changes
 
-Congratulations! You have now completed the **Forking a Repository** section. This is the third and final section of this user guide. Hopefully, by now you have a better understanding of how to use Git and GitHub. If you encountered any issues, make sure to take a look at the **[Troubleshooting](/troubleshooting)** section.
+Congratulations! You have now completed the **Forking a Repository** section. This is the third and final section of this user guide. Hopefully, by now you have a better understanding of how to use Git and GitHub. If you encountered any issues, make sure to take a look at the **[Troubleshooting](../troubleshooting)** section.

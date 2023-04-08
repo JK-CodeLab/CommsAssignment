@@ -1,7 +1,8 @@
 # Pulling and Resolving Merge Conflicts
 
 ## Overview
-This guide will walk you through the process of creating a repository on GitHub and cloning it to your local machine. You will also learn how to add files to the repository you created and push them to GitHub. 
+
+This guide will walk you through the process of creating a repository on GitHub and cloning it to your local machine. You will also learn how to add files to the repository you created and push them to GitHub.
 Since GitHub is a collaborative platform, others can contribute to a repository as well. You may find that the copy of the repository on your computer is different from what is on GitHub. Therefore, it is important to know how to pull changes from a remote repository and resolve merge conflicts. This guide will walk you through the process of pulling changes from a remote repository and resolving merge conflicts.
 
 ## Pulling from a remote repository
@@ -11,7 +12,7 @@ Since GitHub is a collaborative platform, others can contribute to a repository 
     You can do this by clicking on the **“File”** menu in the top left and selecting **“Open Folder”**.
     <br />
     <br />
-    <img src="/images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
     <br />
     <br />
 
@@ -20,11 +21,11 @@ Since GitHub is a collaborative platform, others can contribute to a repository 
     Ensure that the working directory is the directory of your local repository.
     <br />
     <br />
-    <img src="/images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
     <br />
     !!! Tip "Tip"
 
-          Revisit [Adding Files to Repository](/gettingStarted/#adding-files-to-the-repository) for more information on how to change your working directory.
+          Revisit [Adding Files to Repository](../gettingStarted/#adding-files-to-the-repository) for more information on how to change your working directory.
 
     <br />
 
@@ -35,10 +36,10 @@ Since GitHub is a collaborative platform, others can contribute to a repository 
     git status
     ```
 
-    If you do have uncommitted changes, you will need to **commit them before you can pull** any changes from GitHub. Please refer to the [Getting Started](/gettingStarted/#adding-files-to-the-repository) page for instructions on committing changes. If you do not have any uncommitted changes or have committed your changes, you can proceed to the next step.
+    If you do have uncommitted changes, you will need to **commit them before you can pull** any changes from GitHub. Please refer to the [Getting Started](../gettingStarted/#adding-files-to-the-repository) page for instructions on committing changes. If you do not have any uncommitted changes or have committed your changes, you can proceed to the next step.
     <br />
     <br />
-    <img src="/images/pulling/gitStatus.png" alt= "Checking local repository" width="650px">
+    <img src="../images/pulling/gitStatus.png" alt= "Checking local repository" width="650px">
     <br />
 
     !!! Info "`git remote update` and `git status`"
@@ -50,7 +51,7 @@ Since GitHub is a collaborative platform, others can contribute to a repository 
 4.  Use the **`git pull`** command to pull any changes made to the repository.
     <br />
     <br />
-    <img src="/images/pulling/gitPull.png" alt= "Pulling code from repository" width="650px">
+    <img src="../images/pulling/gitPull.png" alt= "Pulling code from repository" width="650px">
     <br />
 
     This will update your local repository with the latest changes from GitHub. You should see a description of the changes that were pulled from GitHub.
@@ -61,7 +62,7 @@ Since GitHub is a collaborative platform, others can contribute to a repository 
 
     <br />
 
-5.  If you receive additional error messages, please refer to the [Troubleshooting](/docs/troubleshooting) page for help.
+5.  If you receive additional error messages, please refer to the [Troubleshooting](../troubleshooting) page for help.
     <br />
     <br />
 
@@ -80,7 +81,7 @@ When working as a team, it is possible that you and your team members will make 
     For example, the image below shows that the file `file1.html` has conflicts.
     <br />
     <br />
-    <img src="/images/pulling/gitConflict.png" alt= "Merge conflict" width="650px">
+    <img src="../images/pulling/gitConflict.png" alt= "Merge conflict" width="650px">
     <br />
     <br />
 
@@ -89,7 +90,7 @@ When working as a team, it is possible that you and your team members will make 
     Below is an example of what you might see in a file with conflicts.
     <br />
     <br />
-    <img src="/images/pulling/gitMerge.png" alt= "Merge conflict file" width="650px">
+    <img src="../images/pulling/gitMerge.png" alt= "Merge conflict file" width="650px">
     <br />
 
     These markers indicate where the changes from both sides of the conflict begin and end.
@@ -109,7 +110,7 @@ When working as a team, it is possible that you and your team members will make 
     Below is an example of what the file might look like after resolving the conflict.
     <br />
     <br />
-    <img src="/images/pulling/gitConflictResolved.png" alt= "Merge conflict file resolved" width="650px">
+    <img src="../images/pulling/gitConflictResolved.png" alt= "Merge conflict file resolved" width="650px">
     <br />
     <br />
 
@@ -128,7 +129,7 @@ When working as a team, it is possible that you and your team members will make 
 6.  Finally, use the **`git push`** command to push your changes back to GitHub.
     <br />
     <br />
-    <img src="/images/pulling/gitPushResolve.png" alt= "Pushing resolved conflict file" width="650px">
+    <img src="../images/pulling/gitPushResolve.png" alt= "Pushing resolved conflict file" width="650px">
     <br />
     <br />
 
@@ -143,4 +144,4 @@ By the end of this section you will have successfully learned about and complete
 - [x] pull changes from a remote repository on GitHub
 - [x] resolve merge conflicts
 
-Congratulations! You have successfully completed the **Pulling and Resolving Merge Conflicts** section of this user guide! Use the following link to move onto the **[Forking a Repository](/forksAndPR)** section.
+Congratulations! You have successfully completed the **Pulling and Resolving Merge Conflicts** section of this user guide! Use the following link to move onto the **[Forking a Repository](../forksAndPR)** section.

@@ -57,12 +57,12 @@ You can register for a github account at <https://github.com/join>.
 2. Navigate to the bottom left of the screen and click the search bar.
 3. Type cmd and press enter to open a command prompt window.
    <br />
-   <img src="/images/openTerminal.png" alt= "Opening command prompt" width="650px">
+   <img src="./images/openTerminal.png" alt= "Opening command prompt" width="650px">
    <br />
    <br />
 4. Verify you have Git installed by running the following command `git -v`.
    <br />
-   <img src="/images/verifyGitInstalled.png" alt= "Checking version of Git installed" width="650px">
+   <img src="./images/verifyGitInstalled.png" alt= "Checking version of Git installed" width="650px">
    <br />
    <br />
 
@@ -98,7 +98,7 @@ Throughout the document we will use several different typographic conventions to
     Aspects of each image related to the instruction will be enclosed in a red box. See the following for an example of an image for the step "Copy the URL of the remote repository":
     <br />
     <br />
-    <img src="/images/gettingStarted/gitLink.png" alt= "Copy the URL of the remote repository" width="650px">
+    <img src="./images/gettingStarted/gitLink.png" alt= "Copy the URL of the remote repository" width="650px">
     <br />
     <br />
 

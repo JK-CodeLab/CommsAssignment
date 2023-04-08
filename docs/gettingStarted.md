@@ -29,7 +29,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
 3.  Select **“New repository”** from the dropdown menu.
     <br />
     <br />
-    <img src="/images/gettingStarted/createRepository.png" alt= "Creating a new github repository" width="650px">
+    <img src="../images/gettingStarted/createRepository.png" alt= "Creating a new github repository" width="650px">
     <br />
     <br />
 
@@ -38,7 +38,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
     Make sure to choose a name that describes what your code does. You can also add a description if you like.
     <br />
     <br />
-    <img src="/images/gettingStarted/namingRepository.png" alt= "Naming the new repository" width="650px">
+    <img src="../images/gettingStarted/namingRepository.png" alt= "Naming the new repository" width="650px">
     <br />
     <br />
 
@@ -47,7 +47,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
     If you want your code to be public, leave the repository as public. If you want it to be private, select “Private”.
     <br />
     <br />
-    <img src="/images/gettingStarted/visibilityRepository.png" alt= "Selecting the visability of the new repository" width="650px">
+    <img src="../images/gettingStarted/visibilityRepository.png" alt= "Selecting the visability of the new repository" width="650px">
     <br />
 
     !!! Info
@@ -59,7 +59,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
 6.  Check the box that says “Initialize this repository with a README” to create a README file in your repository that you can edit later.
     <br />
     <br />
-    <img src="/images/gettingStarted/readMeRepository.png" alt= "Creating a README file for the new repository" width="650px">
+    <img src="../images/gettingStarted/readMeRepository.png" alt= "Creating a README file for the new repository" width="650px">
     <br />
 
     !!! Info
@@ -72,7 +72,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
 7.  Click the **“Create repository”** button at the bottom of the page when you are ready to finalize the changes and create your repository.
     <br />
     <br />
-    <img src="/images/gettingStarted/createFinalRepository.png" alt= "Finalize creating the repository" width="650px">
+    <img src="../images/gettingStarted/createFinalRepository.png" alt= "Finalize creating the repository" width="650px">
     <br />
     <br />
 
@@ -99,14 +99,14 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
 3.  Click on the **“File”** tab in the top left corner of the screen and select **“Open Folder”**.
     <br />
     <br />
-    <img src="/images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
     <br />
     <br />
 
 4.  Navigate to the directory you just created, select it and click the **“Select Folder”** button.
     <br />
     <br />
-    <img src="/images/gettingStarted/openFolder.png" alt= "Open folder in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/openFolder.png" alt= "Open folder in Visual Studio Code" width="650px">
     <br />
     <br />
 
@@ -115,7 +115,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
     This will create a new terminal instance in the directory you are currently in.
     <br />
     <br />
-    <img src="/images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
+    <img src="../images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
     <br />
     <br />
 
@@ -125,7 +125,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
 7.  Click on the **“Code”** button and **copy the URL** of the repository.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitLink.png" alt= "Copy the URL of the remote repository" width="650px">
+    <img src="../images/gettingStarted/gitLink.png" alt= "Copy the URL of the remote repository" width="650px">
     <br />
     <br />
 
@@ -134,7 +134,7 @@ Git and GitHub are powerful tools used throughout the industry to manage code an
     Replace the `[repository URL]` with the **URL you copied** in the previous step.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitClone.png" alt= "Cloning the remote repository" width="650px">
+    <img src="../images/gettingStarted/gitClone.png" alt= "Cloning the remote repository" width="650px">
     <br />
 
     !!! Danger "git clone: command not found"
@@ -169,7 +169,7 @@ After making some changes in your local repository, you can add them to the remo
     Replace the `[directory name]` with the **name of the directory** you created in the previous section.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitCd.png" alt= "Changing the working directory" width="650px">
+    <img src="../images/gettingStarted/gitCd.png" alt= "Changing the working directory" width="650px">
     <br />
     <br />
 
@@ -180,12 +180,12 @@ After making some changes in your local repository, you can add them to the remo
     Alternatively, you can **add all the files** in the directory by typing **`git add .`** into the terminal.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitAdd.png" alt= "Adding files to the staging area" width="650px">
+    <img src="../images/gettingStarted/gitAdd.png" alt= "Adding files to the staging area" width="650px">
     <br />
 
     !!! Info "`git add`"
 
-               This is the first step of the Git workflow. The staging area is a temporary area where you can add files before committing them to the repository. You can add as many files as you want to the staging area before committing them to the repository. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](/#what-is-git) section.
+               This is the first step of the Git workflow. The staging area is a temporary area where you can add files before committing them to the repository. You can add as many files as you want to the staging area before committing them to the repository. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](../#what-is-git) section.
 
     !!! Tip
 
@@ -198,12 +198,12 @@ After making some changes in your local repository, you can add them to the remo
     For example, if you added a new file called `index.html`, you can write a commit message like “Add index.html file”.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitCommit.png" alt= "Committing the changes" width="650px">
+    <img src="../images/gettingStarted/gitCommit.png" alt= "Committing the changes" width="650px">
     <br />
 
     !!! Info "`git commit`"
 
-            This is the second step of the Git workflow. After adding the files to the staging area, you can commit them to the repository. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](/#what-is-git) section.
+            This is the second step of the Git workflow. After adding the files to the staging area, you can commit them to the repository. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](../#what-is-git) section.
 
     !!! Info "Best Practices"
 
@@ -216,12 +216,12 @@ After making some changes in your local repository, you can add them to the remo
     This will push the changes to the remote repository on GitHub. You should see a similar output message in the terminal.
     <br />
     <br />
-    <img src="/images/gettingStarted/gitPush.png" alt= "Pushing the changes to the remote repository" width="650px">
+    <img src="../images/gettingStarted/gitPush.png" alt= "Pushing the changes to the remote repository" width="650px">
     <br />
 
     !!! Info "`git push`"
 
-            This is the third step of the Git workflow. After committing the changes, you can push them to the remote repository on GitHub. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](/#what-is-git) section.
+            This is the third step of the Git workflow. After committing the changes, you can push them to the remote repository on GitHub. For more information about the Git workflow, you can review the Git workflow section in the [What is Git](../#what-is-git) section.
 
     <br />
 
@@ -237,4 +237,4 @@ By the end of this section you will have successfully learned about and complete
 - [x] Create a local copy of a repository on your computer
 - [x] Add files to the repository
 
-Congratulations! You have successfully completed the **Getting Started** section. Use the following link to move onto the **[Pulling and Merge Conflicts](/pullingAndMerge/)** section.
+Congratulations! You have successfully completed the **Getting Started** section. Use the following link to move onto the **[Pulling and Merge Conflicts](../pullingAndMerge/)** section.
