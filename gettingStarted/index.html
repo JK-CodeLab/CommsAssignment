@@ -1,0 +1,674 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../pullingAndMerge/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Getting Started With Git and GitHub - Using Git, and GitHub to Manage Your Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-git-and-github" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Using Git, and GitHub to Manage Your Code" class="md-header__button md-logo" aria-label="Using Git, and GitHub to Manage Your Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Using Git, and GitHub to Manage Your Code
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started With Git and GitHub
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Using Git, and GitHub to Manage Your Code" class="md-nav__button md-logo" aria-label="Using Git, and GitHub to Manage Your Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Using Git, and GitHub to Manage Your Code
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started With Git and GitHub
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting Started With Git and GitHub
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-remote-repository" class="md-nav__link">
+    Creating a Remote Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-local-copy-of-the-repository" class="md-nav__link">
+    Creating a Local Copy of the Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-files-to-the-repository" class="md-nav__link">
+    Adding Files to the Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pullingAndMerge/" class="md-nav__link">
+        Pulling and Resolving Merge Conflicts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forksAndPR/" class="md-nav__link">
+        Forking a Repository
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="getting-started-with-git-and-github">Getting Started With Git and GitHub</h1>
+<h2 id="overview">Overview</h2>
+<p>Git and GitHub are powerful tools used throughout the industry to manage code and collaborate with other developers. This section will cover the basics of using Git and GitHub. It will cover topics such as creating a repository, and pushing new code. By the end of this section, you should have a basic understanding of how to use Git and GitHub to collaborate with other developers.</p>
+<div class="admonition danger">
+<p class="admonition-title">Prerequisites</p>
+<p>Before continuing with the guide, make sure you have completed the following prerequisites:
+<ul>
+  <li> Windows 10 installed on your computer </li>
+  <li> Created a github account </li>
+  <li> Installed a working version of Git </li>
+  <li> Installed Visual Studio Code </li>
+</ul></p>
+</div>
+<h2 id="creating-a-remote-repository">Creating a Remote Repository</h2>
+<ol>
+<li>
+<p>First, navigate to <a href="https://github.com">https://github.com</a> and <strong>log into your GitHub</strong> account.</p>
+<p>If you do not have an account, create a GitHub account by going to <a href="https://github.com/join">https://github.com/join</a>.
+<br />
+<br /></p>
+</li>
+<li>
+<p>After logging in, click on the <strong>“+”</strong> sign in the top right corner of the page.
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Select <strong>“New repository”</strong> from the dropdown menu.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/createRepository.png" alt= "Creating a new github repository" width="650px">
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>On the “Create a new repository” page, enter a <strong>name for your repository</strong> in the <strong>“Repository name”</strong> field.</p>
+<p>Make sure to choose a name that describes what your code does. You can also add a description if you like.
+<br />
+<br />
+<img src="/images/gettingStarted/namingRepository.png" alt= "Naming the new repository" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>Select the <strong>repository’s visibility</strong>.</p>
+<p>If you want your code to be public, leave the repository as public. If you want it to be private, select “Private”.
+<br />
+<br />
+<img src="/images/gettingStarted/visibilityRepository.png" alt= "Selecting the visability of the new repository" width="650px">
+<br /></p>
+<div class="admonition info">
+<p class="admonition-title">Info<p>Public repositories are visible to anyone on the internet. Private repositories are only visible to the owner and collaborators. If you are unsure which option to choose, select private. The visibility of your repository can be changed at any time.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Check the box that says “Initialize this repository with a README” to create a README file in your repository that you can edit later.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/readMeRepository.png" alt= "Creating a README file for the new repository" width="650px">
+    <br /></p>
+<div class="admonition info">
+<p class="admonition-title">Info<p>A README file is a text file that contains information about your project. <em>It is always best practice to include a README file in your repository</em> because it will help other people understand what your project is about.
+For more information about README files, see <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes">https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes</a>.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Click the <strong>“Create repository”</strong> button at the bottom of the page when you are ready to finalize the changes and create your repository.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/createFinalRepository.png" alt= "Finalize creating the repository" width="650px">
+    <br />
+    <br /></p>
+<div class="admonition success">
+<p class="admonition-title">Success<p>At this point, you have successfully created a new repository on GitHub. You can now continue with the guide to learn how you can create a local copy of your repository on your computer.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+</ol>
+<h2 id="creating-a-local-copy-of-the-repository">Creating a Local Copy of the Repository</h2>
+<ol>
+<li>
+<p>Use file explorer to <strong>create a folder</strong> on your computer where you want to store your repository.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>It is always best practice to create a new folder for each project you work on. This will keep your projects organized and make it easier to find them later.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Open <strong>Visual Studio Code</strong>.
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Click on the <strong>“File”</strong> tab in the top left corner of the screen and select <strong>“Open Folder”</strong>.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Navigate to the directory you just created, select it and click the <strong>“Select Folder”</strong> button.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/openFolder.png" alt= "Open folder in Visual Studio Code" width="650px">
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Open a terminal in your Visual Studio Code by clicking on the <strong>“Terminal”</strong> tab in the top left of the screen and select <strong>“New Terminal”</strong>.</p>
+<p>This will create a new terminal instance in the directory you are currently in.
+<br />
+<br />
+<img src="/images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>Navigate to the GitHub repository you created in steps 2 to 6 of the previous section.
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Click on the <strong>“Code”</strong> button and <strong>copy the URL</strong> of the repository.
+    <br />
+    <br />
+    <img src="/images/gettingStarted/gitLink.png" alt= "Copy the URL of the remote repository" width="650px">
+    <br />
+    <br /></p>
+</li>
+<li>
+<p>Return to the Visual Studio Code terminal, and use the <strong><code>git clone [repository URL]</code></strong> command to link the remote repository to your local repository.</p>
+<p>Replace the <code>[repository URL]</code> with the <strong>URL you copied</strong> in the previous step.
+<br />
+<br />
+<img src="/images/gettingStarted/gitClone.png" alt= "Cloning the remote repository" width="650px">
+<br /></p>
+<div class="admonition danger">
+<p class="admonition-title">git clone: command not found</p>
+<p>If you get the error <code>git clone: command not found</code>, it means you may have not installed Git correctly. To fix this, go back to the introduction page and try installing Git again.</p>
+</div>
+<p><br /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>You have successfully created a local copy of the repository in your computer. After you have added a few files to your local repository, continue with the guide to learn how you can push them to a remote repository on GitHub!</p>
+</div>
+<p><br /></p>
+</li>
+</ol>
+<h2 id="adding-files-to-the-repository">Adding Files to the Repository</h2>
+<p>After making some changes in your local repository, you can add them to the remote repository on GitHub. To do this, you will need to follow the Git workflow. If you need a refresher on the Git workflow, you can review the Git workflow section in the introduction page. To add files to the repository, follow the steps below:</p>
+<div class="admonition danger">
+<p class="admonition-title">Double Check</p>
+<p>Make sure that the directory displayed in the terminal is the directory of your local repository before continuing.
+    <ul>
+        <li>Use the <code>pwd</code> command to see your working directory</li>
+        <li>Navigate to the correct by using the <code>cd</code> command if the working directory is not the directory of your local repository</li>
+        <li>Use the <code>cd ..</code> command to navigate to the parent directory of the current directory</li>
+    </ul></p>
+<p>For more information on Windows command line commands, see <a href="https://www.freecodecamp.org/news/command-line-commands-cli-tutorial/">https://www.freecodecamp.org/news/command-line-commands-cli-tutorial/</a>.</p>
+</div>
+<ol>
+<li>
+<p>Change your working directory to the directory of your local repository by typing <strong><code>cd [directory name]</code></strong> into the terminal.</p>
+<p>Replace the <code>[directory name]</code> with the <strong>name of the directory</strong> you created in the previous section.
+<br />
+<br />
+<img src="/images/gettingStarted/gitCd.png" alt= "Changing the working directory" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>Use the <strong><code>git add</code></strong> command to add the files to the staging area.</p>
+<p>If you want to add a file called <code>index.html</code>, type <strong><code>git add index.html</code></strong> into the terminal.</p>
+<p>Alternatively, you can <strong>add all the files</strong> in the directory by typing <strong><code>git add .</code></strong> into the terminal.
+<br />
+<br />
+<img src="/images/gettingStarted/gitAdd.png" alt= "Adding files to the staging area" width="650px">
+<br /></p>
+<div class="admonition info">
+<p class="admonition-title"><code>git add</code><p>This is the first step of the Git workflow. The staging area is a temporary area where you can add files before committing them to the repository. You can add as many files as you want to the staging area before committing them to the repository. For more information about the Git workflow, you can review the Git workflow section in the <a href="/#what-is-git">What is Git</a> section.</p>
+</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>If at anytime you are unsure about what files are in the staging area, you can type <code>git status</code> into the terminal. This will show you a list of all the files in the staging area.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Commit the changes using the <strong><code>git commit -m "[Your commit message]"</code></strong> command. Replace the <code>[Your commit message]</code> with a message that describes the changes you made.</p>
+<p>For example, if you added a new file called <code>index.html</code>, you can write a commit message like “Add index.html file”.
+<br />
+<br />
+<img src="/images/gettingStarted/gitCommit.png" alt= "Committing the changes" width="650px">
+<br /></p>
+<div class="admonition info">
+<p class="admonition-title"><code>git commit</code><p>This is the second step of the Git workflow. After adding the files to the staging area, you can commit them to the repository. For more information about the Git workflow, you can review the Git workflow section in the <a href="/#what-is-git">What is Git</a> section.</p>
+</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Best Practices<p>It is always best practice to add a message when committing your changes. This will help you and others understand what changes you made. It is also best to write a commit message starting with a verb in the present tense. For example, if you fixed a bug in the code, you can write a commit message like “Fix bug in code”.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Use the <strong><code>git push</code></strong> command in the terminal.</p>
+<p>This will push the changes to the remote repository on GitHub. You should see a similar output message in the terminal.
+<br />
+<br />
+<img src="/images/gettingStarted/gitPush.png" alt= "Pushing the changes to the remote repository" width="650px">
+<br /></p>
+<div class="admonition info">
+<p class="admonition-title"><code>git push</code><p>This is the third step of the Git workflow. After committing the changes, you can push them to the remote repository on GitHub. For more information about the Git workflow, you can review the Git workflow section in the <a href="/#what-is-git">What is Git</a> section.</p>
+</p>
+</div>
+<p><br /></p>
+<div class="admonition success">
+<p class="admonition-title">Congratulations!<p>You have successfully pushed your code to GitHub. You should now be able to see your code on GitHub. When you make more changes in the future, you can follow the same steps to push your code to GitHub.</p>
+</p>
+</div>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>By the end of this section you will have successfully learned about and completed the following tasks:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create a remote repository on GitHub</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create a local copy of a repository on your computer</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Add files to the repository</li>
+</ul>
+<p>Congratulations! You have successfully completed the <strong>Getting Started</strong> section. Use the following link to move onto the <strong><a href="/pullingAndMerge/">Pulling and Merge Conflicts</a></strong> section.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../pullingAndMerge/" class="md-footer__link md-footer__link--next" aria-label="Next: Pulling and Resolving Merge Conflicts" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Pulling and Resolving Merge Conflicts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

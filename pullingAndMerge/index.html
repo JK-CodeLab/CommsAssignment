@@ -1,0 +1,573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../gettingStarted/">
+      
+      
+        <link rel="next" href="../forksAndPR/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Pulling and Resolving Merge Conflicts - Using Git, and GitHub to Manage Your Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pulling-and-resolving-merge-conflicts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Using Git, and GitHub to Manage Your Code" class="md-header__button md-logo" aria-label="Using Git, and GitHub to Manage Your Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Using Git, and GitHub to Manage Your Code
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pulling and Resolving Merge Conflicts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Using Git, and GitHub to Manage Your Code" class="md-nav__button md-logo" aria-label="Using Git, and GitHub to Manage Your Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Using Git, and GitHub to Manage Your Code
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gettingStarted/" class="md-nav__link">
+        Getting Started With Git and GitHub
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pulling and Resolving Merge Conflicts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Pulling and Resolving Merge Conflicts
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pulling-from-a-remote-repository" class="md-nav__link">
+    Pulling from a remote repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolving-merge-conflicts" class="md-nav__link">
+    Resolving merge conflicts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forksAndPR/" class="md-nav__link">
+        Forking a Repository
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pulling-and-resolving-merge-conflicts">Pulling and Resolving Merge Conflicts</h1>
+<h2 id="overview">Overview</h2>
+<p>This guide will walk you through the process of creating a repository on GitHub and cloning it to your local machine. You will also learn how to add files to the repository you created and push them to GitHub. 
+Since GitHub is a collaborative platform, others can contribute to a repository as well. You may find that the copy of the repository on your computer is different from what is on GitHub. Therefore, it is important to know how to pull changes from a remote repository and resolve merge conflicts. This guide will walk you through the process of pulling changes from a remote repository and resolving merge conflicts.</p>
+<h2 id="pulling-from-a-remote-repository">Pulling from a remote repository</h2>
+<ol>
+<li>
+<p>Open <strong>Visual Studio Code</strong> and open the directory of your local repository.</p>
+<p>You can do this by clicking on the <strong>“File”</strong> menu in the top left and selecting <strong>“Open Folder”</strong>.
+<br />
+<br />
+<img src="/images/gettingStarted/clickOpenFolder.png" alt= "Click open folder in Visual Studio Code" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>Open a terminal instance by clicking on the <strong>“Terminal”</strong> tab in the top left and selecting <strong>“New Terminal”</strong>.</p>
+<p>Ensure that the working directory is the directory of your local repository.
+<br />
+<br />
+<img src="/images/gettingStarted/openTerminalVSCode.png" alt= "Open terminal in Visual Studio Code" width="650px">
+<br /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Revisit <a href="/gettingStarted/#adding-files-to-the-repository">Adding Files to Repository</a> for more information on how to change your working directory.</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Input the following commands into the terminal to check the status of your local repository:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>update
+git<span class="w"> </span>status
+</code></pre></div>
+<p>If you do have uncommitted changes, you will need to <strong>commit them before you can pull</strong> any changes from GitHub. Please refer to the <a href="/gettingStarted/#adding-files-to-the-repository">Getting Started</a> page for instructions on committing changes. If you do not have any uncommitted changes or have committed your changes, you can proceed to the next step.
+<br />
+<br />
+<img src="/images/pulling/gitStatus.png" alt= "Checking local repository" width="650px">
+<br /></p>
+<div class="admonition info">
+<p class="admonition-title"><code>git remote update</code> and <code>git status</code></p>
+<p>The <code>git remote update</code> command will update the local repository with the latest changes from GitHub. The <code>git status</code> command will check the status of your local repository. This will show you if you have any uncommitted changes.</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Use the <strong><code>git pull</code></strong> command to pull any changes made to the repository.
+    <br />
+    <br />
+    <img src="/images/pulling/gitPull.png" alt= "Pulling code from repository" width="650px">
+    <br /></p>
+<p>This will update your local repository with the latest changes from GitHub. You should see a description of the changes that were pulled from GitHub.</p>
+<div class="admonition warning">
+<p class="admonition-title">Merge conflicts<p>If you receive a message that says <code>Automatic merge failed; fix conflicts and then commit the result</code>, this means that there are merge conflicts in your local repository. You will need to resolve the merge conflicts before you can push your changes to GitHub. Please refer to the <a href="#resolving-merge-conflicts">Resolving merge conflicts</a> section for instructions on resolving merge conflicts.</p>
+</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>If you receive additional error messages, please refer to the <a href="/troubleshooting">Troubleshooting</a> page for help.
+    <br />
+    <br /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>You have successfully pulled changes from a remote repository! You can now see your changes on your local repository.</p>
+</div>
+<p><br /></p>
+</li>
+</ol>
+<h2 id="resolving-merge-conflicts">Resolving merge conflicts</h2>
+<p>When working as a team, it is possible that you and your team members will make changes to the same file. When this happens, Git will not be able to automatically merge the changes. Instead, Git will mark the file as having a merge conflict. You will need to resolve the merge conflict before you can push your changes to GitHub. Merge conflicts might seem daunting the first time you encounter them, but this guide will walk you through the process of resolving merge conflicts using Visual Studio Code.</p>
+<ol>
+<li>
+<p>Identify the file(s) with conflicts by looking at the <strong>output of the <code>git pull</code></strong> command. The file(s) with conflicts will be listed in the output.</p>
+<p>For example, the image below shows that the file <code>file1.html</code> has conflicts.
+<br />
+<br />
+<img src="/images/pulling/gitConflict.png" alt= "Merge conflict" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>Open the file(s) with conflicts in Visual Studio Code and look for the conflict markers which look like <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+<p>Below is an example of what you might see in a file with conflicts.
+<br />
+<br />
+<img src="/images/pulling/gitMerge.png" alt= "Merge conflict file" width="650px">
+<br /></p>
+<p>These markers indicate where the changes from both sides of the conflict begin and end.</p>
+<ul>
+<li>
+<p>The <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> marker indicates the <strong>beginning of your changes</strong>.</p>
+</li>
+<li>
+<p>The <code>=======</code> marker indicates the <strong>end</strong> of the changes from <strong>your local repository</strong> and mark the <strong>start</strong> of the changes from the <strong>remote repository</strong>.</p>
+</li>
+<li>
+<p>The <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> marker indicates the <strong>end</strong> of the changes from the <strong>remote repository</strong>.
+  <br />
+  <br /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Edit the file to resolve the conflict.</p>
+<p>You can choose to keep the changes from your local repository, the changes from the remote repository, or a combination of both. Once you have resolved the conflict, remove the conflict markers and save the file</p>
+<p>Below is an example of what the file might look like after resolving the conflict.
+<br />
+<br />
+<img src="/images/pulling/gitConflictResolved.png" alt= "Merge conflict file resolved" width="650px">
+<br />
+<br /></p>
+</li>
+<li>
+<p>After resolving all conflicts, add the changes to the staging area using the <strong><code>git add</code></strong> command.</p>
+<p>For example, using the command <code>git add file1.html</code> will add a file called <code>file.html</code> to the staging area.
+<br />
+<br /></p>
+</li>
+<li>
+<p>Use the <strong><code>git commit</code></strong> command to commit the changes with a message describing the conflict resolution.</p>
+<p>For example, type <code>git commit -m "Resolve merge conflicts with file1.html"</code>.
+<br />
+<br /></p>
+</li>
+<li>
+<p>Finally, use the <strong><code>git push</code></strong> command to push your changes back to GitHub.
+    <br />
+    <br />
+    <img src="/images/pulling/gitPushResolve.png" alt= "Pushing resolved conflict file" width="650px">
+    <br />
+    <br /></p>
+<div class="admonition success">
+<p class="admonition-title">Congratulations!</p>
+<p>You have successfully solved your first merge conflict! You can now see your changes on GitHub.</p>
+</div>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>By the end of this section you will have successfully learned about and completed the following tasks:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> pull changes from a remote repository on GitHub</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> resolve merge conflicts</li>
+</ul>
+<p>Congratulations! You have successfully completed the <strong>Pulling and Resolving Merge Conflicts</strong> section of this user guide! Use the following link to move onto the <strong><a href="/forksAndPR">Forking a Repository</a></strong> section.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../gettingStarted/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started With Git and GitHub" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Getting Started With Git and GitHub
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../forksAndPR/" class="md-footer__link md-footer__link--next" aria-label="Next: Forking a Repository" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Forking a Repository
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
